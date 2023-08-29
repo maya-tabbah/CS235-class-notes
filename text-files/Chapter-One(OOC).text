@@ -1,0 +1,12 @@
+Object Oriented Concepts (OOC):
+
+
+Object Oriented Analysis and Design (OOAD):
+    -> Process for solving problems from object oriented perspective
+    -> A solution is a program w/ system interacting classes of objects 
+    -> An object is a set of characteristics/behaviors related to solution 
+        >> each object is resposible for some part of the solution 
+    -> A class is a set of objects having the same type 
+        >> A object of a lass is also called an instance of the class
+        >> When you create a object of a class you instantiate the object 
+            >>> "instantiate"; represent as or by an instance.
