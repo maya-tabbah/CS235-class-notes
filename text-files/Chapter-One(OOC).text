@@ -10,3 +10,40 @@ Object Oriented Analysis and Design (OOAD):
         >> A object of a lass is also called an instance of the class
         >> When you create a object of a class you instantiate the object 
             >>> "instantiate"; represent as or by an instance.
+
+Object Oriented Analsis (OOA)
+    -> Process of understanding what the problem is and what the requirements of the solution are
+    -> Initial stages of problem solving
+    -> What do end users expect the solution to be and how it will work? 
+    -> Understanding what the requirements are for a solution to help solve
+
+Object Oriented Design (OOD) 
+    -> Describes the solution to the problem while fulfilling the requirements you discovered during analysis 
+    -> Solution expressed in terms of software objects and how these objects will collaborate 
+        >> Objects collaborate by sending messages to one another 
+
+Aspects of Object Oriented Solution
+    -> A program comprises modules that are working together 
+        >> A module is a self-contained unit of code 
+            # Could be a single stand alone function, class method, class, or group of several functions working together 
+    -> Functions and methods implement algorithms 
+    -> When designing a solution, the challenge is to create a good set of modules, which must move, store, and alter data 
+
+Classes 
+    -> A class combines the attribute/characteristics of objects of a single type together with the objects operations or behaviors into one single unit 
+    -> Data members are individual data items specified in a class 
+    -> Methods/member functions are the operations specified in a class 
+
+Encapsulation 
+    -> A technique that hides inner details. Since functions encapsulate bahavior, objects encapsulate data AND behavior 
+        >> EX: clock encapsulates the time (attribute) as well as operations like displaying or setting the time... you can have the clock preform the operation 
+                but you cant see how its done 
+
+Inheritance 
+    -> Allows you to resuse classes you defined earlier for a related purpose by extending its implementation or making modifications 
+    -> Could make it impossible for the compiler to determine which operation you require in a particular situation.
+
+Polymorphism 
+    -> The outcome of a particular operation depends upon the object that performs the operation 
+    -> It allows the compiler to note that the meaning of an operation is unknown until its execution time. 
+    
