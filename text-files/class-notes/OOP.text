@@ -74,3 +74,21 @@ In Header file:
 // @return true if an_array is sorted, false otherwise
 */
 bool sort(int an_array[], int number_of_elements);
+
+
+class MyClass
+MyClass class_instance;
+string my_variable;
+string my_member_variable_;
+void myMethod();
+int MY_CONSTANT;
+
+Members always end in underscore 
+classes always start with capital
+
+Reduce Coupling: 
+    -> Methods should only call other methods:
+        >> defined within same class
+        >> of argument objects
+        >> of objects created within the method
+        >> of objects that are data members of the class
