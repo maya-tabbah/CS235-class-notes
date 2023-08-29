@@ -1,0 +1,46 @@
+What is a class?:
+    -> A collection of data and actions of that data
+
+    -> A language mechanism for 
+        >> Encoding abstraction
+        >> Enforcing encapsulation 
+        >> Seperare interface from implementation
+
+    -> A user-defined data type that bundles together data and operation on the data
+
+What is an object?
+    -> An aspect of that data
+
+Encapsulation:
+    -> Objects combine data and operations
+
+Information Hiding: 
+    -> Objects hide inner details 
+    -> You deside what the client has access to and make sure to hide details you dont want them to know
+    -> Access access_specifier: public/private/(MORE LATER)
+
+
+    class SomeClass
+{
+    public:
+        // public data members and member functions go here
+
+    private:
+        // private data members and member functions go here
+
+}; // end SomeClass
+
+
+OO Solutions:
+    -> Combines attributes and actions
+    -> data members + member functions 
+
+class SomeClass
+{
+    access_specifier // can be private, public or protected
+
+        data_members // variables used in class
+
+        member_functions // methods to access data members
+
+}; // end SomeClass
