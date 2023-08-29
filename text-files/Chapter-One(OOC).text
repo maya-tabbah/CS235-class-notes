@@ -59,4 +59,6 @@ Coupling
     -> The modules in design should be independent to one another, but some coupling is necessary 
     -> Should be loosely coupled NOT highly (dependency on another class is highly coupled)
 
-
+Operation Contract 
+    -> Documents how methods can be used and what limitations it has 
+    -> Specified during analysis 
