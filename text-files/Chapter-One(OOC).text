@@ -47,3 +47,16 @@ Polymorphism
     -> The outcome of a particular operation depends upon the object that performs the operation 
     -> It allows the compiler to note that the meaning of an operation is unknown until its execution time. 
     
+
+Cohesion 
+    -> Module must be well named
+    -> Easy to reuse in other projects 
+    -> Easy to maintain (has but one task that is easy to revise)
+    -> More robust and is less likely to be effected by change 
+
+Coupling 
+    -> Coupling is the measure of the dependence among modules 
+    -> The modules in design should be independent to one another, but some coupling is necessary 
+    -> Should be loosely coupled NOT highly (dependency on another class is highly coupled)
+
+
