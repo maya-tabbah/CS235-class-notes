@@ -8,6 +8,11 @@ What is a class?:
 
     -> A user-defined data type that bundles together data and operation on the data
 
+    -> Member function
+        >> The operations/actions available on the data
+        >> Mutator functions: modify data members 
+        >> Accessor functions: retrieve the value of data members
+
 What is an object?
     -> An aspect of that data
 
@@ -24,6 +29,9 @@ Information Hiding:
 {
     public:
         // public data members and member functions go here
+            SomeClass(); //default constructor
+            SomeClass( parameter_list ); //parameterized constructor
+                // public data members and member functions go here
 
     private:
         // private data members and member functions go here
@@ -44,3 +52,25 @@ class SomeClass
         member_functions // methods to access data members
 
 }; // end SomeClass
+
+
+.hpp: Interface
+.cpp: Implementation
+
+Makefile:
+    -> A way of automating software building and managing dependencies 
+    -> Defines a set of rules and instructions, is read by the make utility 
+        >> Make utility determines which pieces of the program need to be recompiled 
+        >> You will need to understand the makefile if order to modify it as needed
+
+In Header file:
+/** sorts an array into ascending order
+// @pre 1 <= number_of_elements <= MAX_ARRAY_SIZE
+// @post an_array[0] <= an_array[1] <= ...
+// <= an_array[number_of_elements-1];
+// number_of_elements is unchanged
+// @param an_array of values to be sorted
+// @param number_of_elements contained in an_array
+// @return true if an_array is sorted, false otherwise
+*/
+bool sort(int an_array[], int number_of_elements);
