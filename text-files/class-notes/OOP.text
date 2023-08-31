@@ -92,3 +92,76 @@ Reduce Coupling:
         >> of argument objects
         >> of objects created within the method
         >> of objects that are data members of the class
+
+Abstraction:
+    -> Seperates the purpose of a model from its implementation 
+    -> Specifies each module clearly before you implement it 
+    -> Separating the purpose of a module from its implementation is known as functional (or procedural) ­abstraction.
+    -> Data abstraction focuses on what the operations do with the collection of data, instead of on how you implement them.
+
+Interface: 
+    -> A complete interface for a class is one that will allow programmers to accomplish any reasonable task, given the responsibilities of that class. 
+    -> A minimal interface for a class is one that contains a method if and only if that method is essential to that class’s responsibilities.
+
+1 /** @file BagInterface.h */
+ 2 #ifndef BAG_INTERFACE_
+ 3 #define BAG_INTERFACE_
+ 4
+ 5 #include <vector>
+ 6 
+ 7 template<class ItemType>
+ 8 class BagInterface
+ 9 {
+10 public:
+11    /** Gets the current number of entries in this bag.
+12     @return  The integer number of entries currently in the bag. */
+13    virtual int getCurrentSize() const = 0;
+14
+15    /** Sees whether this bag is empty.
+16     @return  True if the bag is empty, or false if not. */
+17    virtual bool isEmpty() const = 0;
+18
+19    /** Adds a new entry to this bag.
+20     @post  If successful, newEntry is stored in the bag and
+21        the count of items in the bag has increased by 1.
+22     @param newEntry  The object to be added as a new entry.
+23     @return  True if addition was successful, or false if not. */
+24    virtual bool add(const ItemType& newEntry) = 0;
+25
+26    /** Removes one occurrence of a given entry from this bag,
+27        if possible.
+28     @post  If successful, anEntry has been removed from the bag
+29         and the count of items in the bag has decreased by 1.
+30     @param anEntry  The entry to be removed.
+31     @return  True if removal was successful, or false if not. */
+32    virtual bool remove(const ItemType& anEntry) = 0;
+33
+34    /** Removes all entries from this bag.
+35     @post  Bag contains no items, and the count of items is 0. */
+36    virtual void clear() = 0;
+37 
+38    /** Counts the number of times a given entry appears in this bag.
+39     @param anEntry  The entry to be counted.
+40      @return  The number of times anEntry appears in the bag. */
+41    virtual int getFrequencyOf(const ItemType& anEntry) const = 0;
+42
+43    /** Tests whether this bag contains a given entry.
+44     @param anEntry  The entry to locate.
+45     @return  True if bag contains anEntry, or false otherwise. */
+46    virtual bool contains(const ItemType& anEntry) const = 0;
+47
+48    /** Empties and then fills a given vector with all entries that
+49        are in this bag.
+50     @return  A vector containing copies of all the entries in this bag. */
+51    virtual std::vector<ItemType> toVector() const = 0;
+52
+53    /** Destroys this bag and frees its assigned memory. (See C++ Interlude 2.) */
+54    virtual ~BagInterface() { }
+55 }; // end BagInterface
+
+
+
+
+
+
+(All notes from chapter one of Data 'Abstration & Problem Solving with C')
