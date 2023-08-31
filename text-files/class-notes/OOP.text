@@ -160,7 +160,41 @@ Interface:
 55 }; // end BagInterface
 
 
+Private Data Members:
 
+// Original Solution
+class Building
+{
+private:
+   Appliance appliance;
+public:
+   void turnOnLight()
+   {
+      appliance.getLamp().turnOn(); // Improper method use
+   }  // end turnOnLight
+}; // end Building
+class Appliance
+{
+private:
+   Lamp light;
+public:
+   Lamp getLamp()
+   {
+      return light;
+   }  // end getLamp
+};  // end Appliance
+class Lamp
+{
+public:
+   void turnOn();
+}; // end Lamp
+
+
+    -> When the only operations involved with a particular data member are retrieve and modify, 
+       the object should provide a simple method—called an accessor—that returns the value of the
+       data member and another method—called a mutator—that sets the value of the data member. For example,
+       a Person object could provide access to the data member theName through the methods getName to return
+       the person’s name and setName to change the person’s name.
 
 
 
