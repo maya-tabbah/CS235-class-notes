@@ -1,10 +1,83 @@
 Inheritance:
 
-Default Constructor: 
-A default constuctor is used as a default when the user does not enter 
-a certain value. If there is no default constructor, the compiler will give 
-a default constructor 
+- From general to specific 
+- we could inherit functionality from one class to another
+- Inherit public members of another class
 
+Basic Inheritance.....
+
+class Printer
+{
+public:
+    //Constructor, destructor
+
+    void setPaperSize(int size);
+    void setOrientation(const string& orientation);
+    void printDocument(const string& document);
+private:
+    // stuff here
+}; //end Printer
+
+// a different type of printer class
+class BatchPrinter
+{
+public:
+    //Constructor, destructor
+    void addDocument(const string& document);
+    void printAllDocuments();
+private:
+    vector<string> documents;
+}; //end BatchPrinter
+
+
+void initializePrinter(Printer& p) //some initialization function
+BatchPrinter batch;
+initializePrinter(batch); //legal because batch is-a printer
+
+- Think of argument types as specifying minimum requirements
+
+Overloading vs overriding: 
+
+- Overloading (independent of inheritance): Define new function with same name 
+but different parameter list
+(different signature or prototype)
+
+int someFunction(){ }
+int someFunction(string some_string){
+
+- Overriding: Rewrite function with same signature in derived class
+(only for inheritance)
+
+int BaseClass::someMethod(){ }
+int DerivedClass::someMethod(){ }
+
+ex....
+class Printer
+{
+    public:
+        //Constructor, destructor
+
+    void setPaperSize(int size);
+    void setOrientation(const string& orientation);
+    void printDocument(const string& document);
+    private:
+        // stuff here
+}; //end Printer
+
+class GraphicsPrinter: public Printer // inherit from printer
+{
+    public:
+        //Constructor, destructor
+        void setPaperSize(const int size);
+
+                                ⌄⌄⌄overrides setPaperSize()
+        void printDocument(const Picture& picture);//some Picture object
+                ^^^overloads printDocument()
+        private:
+            //stuff here
+}; //end GraphicsPrinter
+
+ 
 Friend functions:
 - Functions that are not members of the class but CAN
 access private members of the class.
@@ -28,11 +101,32 @@ returnType someFriendFunction( parameter list)
     // implementation here
     some_data_member_ = 35; //has access to private data
 }
+protected access_specifier:
+
+class SomeClass
+{
+    public:
+        // public members available to everyone
+    protected:
+        // protected members available to class members and derived classes
+
+    private:
+        // private members available to class members ONLY
+}; // end SomeClass
+
+Important points about inheritance:
+- Derived class inherits all public and protected members of base class
+- Does not have direct access to base class private members.
+However, can call public functions of the base class, which in
+turn do have access base classe's private members
+- Does not inherit constructor and destructor
+- Does not inherit assignment operator
+- Does not inherit friend functions and friend classes
+-------------------------------------------------------------------------------------------------------------
 
 Operator overloading: 
 
-Desirable operator (=, +, -, == …) behavior may not be well
-defined on objects
+Desirable operator (=, +, -, == …) behavior may not be well defined on objects
 
 class SomeClass
 {
@@ -54,6 +148,8 @@ bool operator==(const SomeClass& object1,
             (object1.memberB_ == object2.memberB_) && … );
 }
 
+-------------------------------------------------------------------------------------------------------------
+
 Enums: 
 - A user defined datatype that consist of integral
 constants 
@@ -68,3 +164,84 @@ To change default:
 enum ta_role {MAMMAL = 5, FISH = 10, BIRD = 20};
 (prob dont do that??? unless it makes sense???)
 
+-------------------------------------------------------------------------------------------------------------
+Constructors:
+
+- A class needs user-defined constructor if must initialize data members
+- Base-class constructor always called before derived-class constructor
+- If base class has only parameterized constructor, derived
+class must supply constructor that calls base-class
+constructor explicitly
+
+
+Default Constructor: 
+A default constuctor is used as a default when the user does not enter 
+a certain value. If there is no default constructor, the compiler will give 
+a default constructor 
+
+Interface...
+class BaseClass
+{
+    public:
+        //stuff here
+        //may also have other constructors
+    private:
+        //stuff here
+}; //end BaseClass
+
+class DerivedClass: public BaseClass
+{
+public:
+    DerivedClass();
+    //stuff here
+private:
+    //stuff here
+}; //end DerivedClass
+
+Implementation.....
+DerivedClass::DerivedClass()
+BaseClass(INITIAL_VAL) //there needs to be a default constructor for BaseClass
+{
+    //implementation here
+}
+
+BaseClass::
+BaseClass(int value):
+base_member_(value)
+{
+    //implementation here
+}
+
+Main()....
+DerivedClass my_derived_class;
+//BaseClass compiler-supplied default constructor called then DerivedClass constructor called
+
+// BaseClass constructor explicitly called by DerivedClass constructor
+
+Destructor: 
+Destructor invoked if:
+ - program execution left scope containing object
+ definition
+ - delete operator was called on object that was created dynamically
+
+- Derived class destructor always causes base class destructor to be called implicitly
+- Derived class destructor is called before base class destructor
+
+Order of calls to constructors
+when instantiating a DerivedC object:
+BaseClass()
+DerivedA()
+DerivedB()
+DerivedC()
+
+Order of calls to destructors
+when instantiating a DerivedC object:
+~DerivedC()
+~DerivedB()
+~DerivedA()
+~BaseClass()
+
+Basic Inheritance:
+No runtime cost
+In memory DerivedClass is simply BaseClass with extra members tacked on the end
+Basically saving to re-write BaseClass code
