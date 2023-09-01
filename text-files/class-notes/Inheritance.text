@@ -1,0 +1,70 @@
+Inheritance:
+
+Default Constructor: 
+A default constuctor is used as a default when the user does not enter 
+a certain value. If there is no default constructor, the compiler will give 
+a default constructor 
+
+Friend functions:
+- Functions that are not members of the class but CAN
+access private members of the class.
+- Violates Information hiding 
+- Dont use unless appropriate or controlled
+
+declaration of friend functions.....
+
+class SomeClass
+{
+    public:
+        // public member functions go here
+        friend returnType someFriendFunction( parameter list);
+    private:
+        int some_data_member_;
+}; // end SomeClass
+
+Implementation(SomeClass.cpp).....
+returnType someFriendFunction( parameter list)
+{
+    // implementation here
+    some_data_member_ = 35; //has access to private data
+}
+
+Operator overloading: 
+
+Desirable operator (=, +, -, == …) behavior may not be well
+defined on objects
+
+class SomeClass
+{
+    public:
+        // public data members and member functions go here
+        friend bool operator== (const SomeClass& object1,
+                                    const SomeClass& object2);
+    private:
+        // private members go here
+}; // end SomeClass
+
+Implementation....
+(Operator is NOT a member function)
+
+bool operator==(const SomeClass& object1,
+                                const SomeClass& object2)
+{
+    return ( (object1.memberA_ == object2.memberA_) &&
+            (object1.memberB_ == object2.memberB_) && … );
+}
+
+Enums: 
+- A user defined datatype that consist of integral
+constants 
+- For readability
+
+enum season {SPRING, SUMMER, AUTUMN, WINTER }; 
+enum animal_type {MAMMAL, FISH, BIRD}; 
+
+By default = 0,1,2,...
+
+To change default: 
+enum ta_role {MAMMAL = 5, FISH = 10, BIRD = 20};
+(prob dont do that??? unless it makes sense???)
+
