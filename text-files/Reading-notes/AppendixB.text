@@ -1,0 +1,23 @@
+Constructing the program: 
+    -> The difference between a small modular program and a large modular program is 
+       the number of modules each contains.
+    -> Writing one large modular program is not very different from writing many small,
+       independent programs
+
+Style 
+    -> Private Data Types:
+        >> The only operations involved with a particular data member are retrieve and modify,
+         the object should provide a simple method—called an accessor—that returns the value of 
+         the data member and another method—called a mutator—that sets the value of the data member. 
+         For example, a Person object could provide access to the data member theName through the methods 
+         getName to return the person’s name and setName to change the person’s name.
+    -> Pass-by-constant reference:
+        >>  The situation is analogous to using a variable whose value never changes when you really should use a constant.
+            The solution is to precede the parameter’s declaration with const, which prevents the method from changing the
+            corresponding argument.
+
+
+
+
+
+(All notes from chapter one of Data 'Abstration & Problem Solving with C')
