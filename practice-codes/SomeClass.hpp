@@ -7,13 +7,13 @@
 class SomeClass
 {
 public:
-SomeClass(); //Constructor
-int methodOne();
-bool methodTwo();
-bool methodThree(int
-someParameter);
+    SomeClass(); //Constructor
+        int methodOne();
+        bool methodTwo();
+        bool methodThree(int someParameter);
+
 private:
-int data_member_one_;
-bool data_member_two_;
+    int data_member_one_;
+    bool data_member_two_;
 }; //end SomeClass
 #endif
