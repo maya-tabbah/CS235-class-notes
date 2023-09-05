@@ -1,6 +1,7 @@
 //Implementation
 
 #include “SomeClass.hpp”
+
 SomeClass::SomeClass()
 {
     //implementation here

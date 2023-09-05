@@ -1,0 +1,78 @@
+Abstract Data Types
+
+A collection of data (container) and a set of operations on the data
+
+Carefully specify an ADT's operations before you implement them
+
+Data and Abstraction:
+    Operations on data are central to most solutions 
+    Think abstractly about data and its managment 
+
+    typically need to....
+        organize data 
+        add data 
+        remove data 
+        retrieve 
+        ask questions about data
+    
+    Start seperating the design from the implementation 
+
+Designing an ADT:
+    What data does the problem require? 
+        
+
+DESIGN the Bag ADT: 
+    Contains things
+    container or collection of objects 
+    objects are of the same type 
+    no particular order
+    can contain duplicates (is not a set)
+
+    design step one (IDENTIFY BEHAVIORS): 
+        Add items 
+        remove items 
+        check items 
+        count items 
+        limit??? (later on)
+        check if empty 
+        empty the bag 
+        get item 
+
+    specify data and operations:
+        getCurrentSize()
+        isEmpty()
+        add(new_entry)
+        remove(an_entry)
+        clear()
+        getFrequency(an_entry)
+        contains(an_entry)
+        toVector()
+
+Motivation:
+    We dont want to write a new Bag ADT for each type of object we might want to store
+    we want to parameterize over a random type 
+
+Vector 
+
+    Decleration:
+        template<class T> //this is a template definition 
+
+    implementation:
+        template<class T>
+        bool Bag<t>::add(const T& new_entry)
+
+    Instantiation 
+
+Linking with templates
+    Dont include the template with the files that are trying to compile 
+
+
+Lecture Activity: 
+    int main(){
+
+        MyTemplate<double> double_object;
+        double_object.setData(3.0);
+        cout << double_object.getData() << endl; 
+    }
+
+
